@@ -1,0 +1,36 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "java (buildArtifact)",
+			"mainClass": "role.App",
+			"targetPath": "${workspaceFolder}/${workspaceFolderBasename}.jar",
+			"elements": [
+				"${compileOutput}",
+				"${dependencies}"
+			],
+			"problemMatcher": [],
+			"label": "java (buildArtifact): Kotlin",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		},
+		{
+            "label": "build",
+            "type": "shell",
+            "command": "./gradlew build -x test",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "run",
+            "type": "shell",
+            "command": "./gradlew run",
+            "problemMatcher": []
+        }
+	]
+}
